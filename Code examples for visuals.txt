@@ -1,0 +1,27 @@
+
+df.drop('Id',axis=1,inplace=True) - #make ID column
+
+
+df.describe() -# check dataset details
+
+
+
+df[df.duplicated()] - # to check for dublicates 
+
+
+
+
+plt.figure(1, figsize=(5,5)) -# visual representation of the type % distribution
+plt.title("Distribution of Type")
+dataset['Type'].value_counts().plot.pie(autopct="%1.1f%%")
+
+
+corr_mat=df.corr() -= visula heatmap, good visual representation
+plt.figure(figsize=(16,10))
+sns.heatmap(corr_mat,annot=True,fmt='.2f',alpha = 0.7,   cmap= 'coolwarm')
+plt.show())
+
+
+
+plt.figure(figsize=(10,10)) -# glass type bar chart
+sns.countplot(x='Glass_type', data=df, order=df['Glass_type'].value_counts().index);
